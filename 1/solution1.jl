@@ -2,7 +2,7 @@ using DelimitedFiles
 
 A = [3,4,2,1,3,3]
 B = [4,3,5,3,9,3]
-C,D = readdlm("1/input.txt") |> x -> (x[:, 1], x[:, 2])
+C,D = readdlm("1/input1.txt") |> x -> (x[:, 1], x[:, 2])
 
 function sum_distances(A,B)
     pairs = zip(sort(A),sort(B))
