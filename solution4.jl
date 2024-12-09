@@ -55,3 +55,29 @@ end
 
 @show count_substring_matches(grid_A, "XMAS") # 18
 @show count_substring_matches(grid_B, "XMAS") # 2551
+
+function get_cross_words(grid, x, y)
+    word_1_locs = [[-1,-1], [0,0], [1,1]]
+    word_2_locs = [[-1,1], [0,0], [1,-1]]
+
+    word_1 = [grid[j[1]][j[2]] for j in [[x,y] + i for i in word_1_locs]]
+    word_2 = [grid[j[1]][j[2]] for j in [[x,y] + i for i in word_2_locs]]
+
+    return join(word_1), join(word_2)
+end
+
+function check_cross_words(grid)
+    xmas_count = 0
+    for y in 2:length(grid)-1
+        for x in 2:length(grid[1])-1
+            x_words = get_cross_words(grid, x, y)
+            if x_words[1] in ["MAS", "SAM"] && x_words[2] in ["MAS", "SAM"]
+                xmas_count = xmas_count + 1
+            end
+        end
+    end
+    return xmas_count
+end
+
+@show check_cross_words(grid_A) # 9
+@show check_cross_words(grid_B) # 1985

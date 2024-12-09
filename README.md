@@ -6,8 +6,8 @@ Using [Advent of Code](https://adventofcode.com/) to get better at [Julia](https
 |1| ✓| ✓|
 |2| ✓| ✓|
 |3| ✓| ✓|
-|4| ✓| |
-|5| ✓| |
+|4| ✓| ✓|
+|5| ✓| ✓|
 |6| | |
 |7| | |
 |8| | |
