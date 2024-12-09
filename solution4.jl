@@ -10,11 +10,9 @@ A = ["MMMSXXMASM",
 "MXMXAXMASX"]
 
 grid_A = [split(a,"") for a in A]
-#@show grid_A
 
-B = split(read("4/input4.txt", String), '\n')
-grid_B = [split(b,"") for b in B][1:end-1] # need to remove last element as empty row
-#@show grid_B
+B = split(read("inputs/input4.txt", String), '\n')
+grid_B = [split(b,"") for b in B] 
 
 function get_substring_locs(x, y, x_max, y_max)
     combined_substring_locs = []
@@ -36,9 +34,7 @@ function get_substrings(grid, x, y)
     substrings = []
     for substring_loc in substring_locs
         string = [grid[x][y]] # initialise with letter at starting point
-        #@show string
         for char_loc in substring_loc
-            #@show grid[char_loc[1]][char_loc[2]]
             push!(string, grid[char_loc[1]][char_loc[2]])
         end
         append!(substrings, [string])

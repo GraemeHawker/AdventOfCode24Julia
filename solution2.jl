@@ -1,7 +1,7 @@
 using DelimitedFiles
 
 A = [7 6 4 2 1; 1 2 7 8 9; 9 7 6 2 1; 1 3 2 4 5; 8 6 4 4 1; 1 3 6 7 9]
-B = readdlm("2/input2.txt") # creates a 2D array; input rows are different lengths so shorter rows will contain empty strings to fill
+B = readdlm("inputs/input2.txt") # creates a 2D array; input rows are different lengths so shorter rows will contain empty strings to fill
 
 function test_safe(a)
     filtered_array = filter((i) -> i != "", a) # removes empty strings

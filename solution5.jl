@@ -30,12 +30,11 @@ A = "47|53
 A_rules = [split(i, '|') for i in split(split(A, "\n\n")[1], '\n')]
 A_updates = [split(i, ',') for i in split(split(A, "\n\n")[2], '\n')]
 
-B = read("5/input5.txt", String)
+B = read("inputs/input5.txt", String)
 B_rules = [split(i, '|') for i in split(split(B, "\n\n")[1], '\n')]
 B_updates = [split(i, ',') for i in split(split(B, "\n\n")[2], '\n')][1:end-1]
 
 function test_rule(rule, update)
-    #@show rule, update
     if rule[1] in update && rule[2] in update
         if findfirst(x -> x==rule[1], update) > findfirst(x -> x==rule[2], update)
             return false
@@ -47,7 +46,6 @@ end
 function test_all_rules(rules, updates)
     total_mids = 0
     for update in updates
-        @show update
         if all(i->(i==true), [test_rule(rule, update) for rule in rules])
             total_mids = total_mids + parse(Int, update[div(length(update),2)+1])
         end
@@ -55,7 +53,5 @@ function test_all_rules(rules, updates)
     return total_mids
 end
 
-@show test_all_rules(A_rules, A_updates)
-@show test_all_rules(B_rules, B_updates)      
-
-
+@show test_all_rules(A_rules, A_updates) # 143
+@show test_all_rules(B_rules, B_updates) # 5374      
