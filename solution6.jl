@@ -46,10 +46,6 @@ grid_A = parse_input(read("inputs/input6_example.txt", String))
 grid_B = parse_input(read("inputs/input6.txt", String))
 @show run_simulation(grid_B)
 
-function checksum(pos, dir)
-    return join([String(x) for x in [pos[1],',',pos[2],',',dir[1],',',dir[2]]])
-end
-
 function run_blocking_simulation(grid, block_pos)
     cur_pos = findfirst(==('^'), grid)
     if !(cur_pos == block_pos)

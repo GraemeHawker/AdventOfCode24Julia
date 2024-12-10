@@ -11,3 +11,5 @@ Using [Advent of Code](https://adventofcode.com/) to get better at [Julia](https
 |6| ✓| ✓|
 |7| | |
 |8| | |
+|9| | |
+|10| | |
