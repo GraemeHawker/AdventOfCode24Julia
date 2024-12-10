@@ -1,39 +1,12 @@
-A = "47|53
-97|13
-97|61
-97|47
-75|29
-61|13
-75|53
-29|13
-97|29
-53|29
-61|53
-97|53
-61|29
-47|13
-75|47
-97|75
-47|61
-75|61
-47|29
-75|13
-53|13
+function parse_input(input)
+    rules, updates = split(input, "\n\n")
+    rules = [parse.(Int, rule) for rule in split.(split(rules, "\n"), "|")]
+    updates = [parse.(Int, update) for update in split.(split(updates, "\n"), ",")]
+    return rules, updates
+end
 
-75,47,61,53,29
-97,61,53,29,13
-75,29,13
-75,97,47,61,53
-61,13,29
-97,13,75,29,47"
-
-A_rules, A_updates = split(A, "\n\n")
-A_rules = [parse.(Int, rule) for rule in split.(split(A_rules, "\n"), "|")]
-A_updates = [parse.(Int, update) for update in split.(split(A_updates, "\n"), ",")]
-
-B_rules, B_updates = split(read("inputs/input5.txt", String), "\n\n")
-B_rules = [parse.(Int, rule) for rule in split.(split(B_rules, "\n"), "|")]
-B_updates = [parse.(Int, update) for update in split.(split(B_updates, "\n"), ",")]
+A_rules, A_updates = parse_input(read("inputs/input5_example.txt", String))
+B_rules, B_updates = parse_input(read("inputs/input5.txt", String))
 
 function test_rule(rule, update)
     if rule[1] in update && rule[2] in update
@@ -96,5 +69,5 @@ function get_updated_mids(rules, updates)
     return total_mids
 end
 
-@show get_updated_mids(A_rules, A_updates) # 123
-@show get_updated_mids(B_rules, B_updates) # 4260
+@show get_updated_mids(A_rules, A_updates) 
+@show get_updated_mids(B_rules, B_updates) 

@@ -1,7 +1,6 @@
 using DelimitedFiles
 
-A = [3,4,2,1,3,3]
-B = [4,3,5,3,9,3]
+A,B = readdlm("inputs/input1_example.txt") |> x -> (x[:, 1], x[:, 2])
 C,D = readdlm("inputs/input1.txt") |> x -> (x[:, 1], x[:, 2])
 
 function sum_distances(A,B)
