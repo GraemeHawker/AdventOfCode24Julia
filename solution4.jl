@@ -1,14 +1,4 @@
-A = ["MMMSXXMASM",
-"MSAMXMSMSA",
-"AMXSXMAAMM",
-"MSAMASMSMX",
-"XMASAMXAMM",
-"XXAMMXXAMA",
-"SMSMSASXSS",
-"SAXAMASAAA",
-"MAMMMXMMMM",
-"MXMXAXMASX"]
-
+A = split(read("inputs/input4_example.txt", String), '\n')
 grid_A = [split(a,"") for a in A]
 
 B = split(read("inputs/input4.txt", String), '\n')

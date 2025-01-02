@@ -1,6 +1,6 @@
-A = "xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))"
+A = read("inputs/input3_example1.txt", String)
 B = read("inputs/input3.txt", String)
-C = "xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))"
+C = read("inputs/input3_example2.txt", String)
 
 function do_muls(a)
     re = r"mul\((?<first>[0-9]{1,3}),(?<second>[0-9]{1,3})\)"
